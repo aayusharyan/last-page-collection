@@ -38,6 +38,7 @@ body {
   background: var(--bg);
   color: var(--color);
   perspective: 1200px;
+  margin: 0px;
 }
 
 a {

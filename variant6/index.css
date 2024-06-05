@@ -2,11 +2,19 @@
     404 page
 =======================*/
 
+body {
+  min-height: 100vh;
+}
 
 .page_404 {
   padding: 40px 0;
   background: #fff;
   font-family: 'Arvo', serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 .page_404 img {
