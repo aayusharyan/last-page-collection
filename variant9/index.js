@@ -1,3 +1,3 @@
-        // Parallax Code
-        var scene = document.getElementById('scene');
-        var parallax = new Parallax(scene);
+// Parallax Code
+var scene = document.getElementById('scene');
+var parallax = new Parallax(scene);

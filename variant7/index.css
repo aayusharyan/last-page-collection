@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Inconsolata";
+
 html {
   min-height: 100%;
 }
@@ -52,14 +53,16 @@ body {
   background-image: linear-gradient(0deg, transparent 0%, rgba(32, 128, 32, 0.2) 2%, rgba(32, 128, 32, 0.8) 3%, rgba(32, 128, 32, 0.2) 3%, transparent 100%);
   background-repeat: no-repeat;
   -webkit-animation: scan 7.5s linear 0s infinite;
-          animation: scan 7.5s linear 0s infinite;
+  animation: scan 7.5s linear 0s infinite;
 }
 
 @-webkit-keyframes scan {
   0% {
     background-position: 0 -100vh;
   }
-  35%, 100% {
+
+  35%,
+  100% {
     background-position: 0 100vh;
   }
 }
@@ -68,10 +71,13 @@ body {
   0% {
     background-position: 0 -100vh;
   }
-  35%, 100% {
+
+  35%,
+  100% {
     background-position: 0 100vh;
   }
 }
+
 .terminal {
   box-sizing: inherit;
   position: absolute;

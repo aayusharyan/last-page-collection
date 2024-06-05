@@ -7,9 +7,9 @@ export default {
       return fetch(req);
 
     // Random number between 1 to 10. That will be our variant
-    const variant = "variant" + Math.ceil(Math.random()*10); 
+    const variant = "variant" + Math.ceil(Math.random() * 10);
     url.pathname = variant + url.pathname;
-    
+
     // Reconstruct response to avoid immutability
     let res = await fetch(url);
     res = new Response(res.body, res);
