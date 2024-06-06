@@ -351,7 +351,7 @@ nav .menu .menu_icon:hover .icon:after {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .wrapper .container {
