@@ -7,8 +7,6 @@
 ![Static Badge](https://img.shields.io/badge/Please%20Star%20this%20repo%20%E2%AD%90%20-8A2BE2)
 
 
-
-This website is a collection of interesting 
-Public site for homelab server
+This website is a collection of interesting public site for homelab server
 
 There are multiple variants of the homepage. Each is a different version in it's own directory.
