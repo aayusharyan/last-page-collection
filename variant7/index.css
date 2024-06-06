@@ -126,3 +126,5 @@ a::after {
 .errorcode {
   color: white;
 }
+
+.github-fork-ribbon:before { background-color: #333; }

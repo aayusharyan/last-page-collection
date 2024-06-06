@@ -41,7 +41,7 @@ body {
   margin: 0px;
 }
 
-a {
+a.home_button {
   text-transform: uppercase;
   text-decoration: none;
   background: var(--button);
@@ -151,3 +151,5 @@ h1:after {
     --swing-x: 100;
   }
 }
+
+.github-fork-ribbon:before { background-color: #333; }

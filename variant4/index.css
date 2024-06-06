@@ -11,7 +11,6 @@ body {
   color: #fff;
   font-size: 96px;
   font-family: 'Fira Mono', monospace;
-  letter-spacing: -7px;
 }
 
 div {
@@ -87,3 +86,5 @@ div:after {
     transform: translate(-22px, 5px) skew(21deg);
   }
 }
+
+.github-fork-ribbon:before { background-color: #333; }

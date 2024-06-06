@@ -718,3 +718,5 @@ nav .menu .menu_icon:hover .icon:after {
   animation-name: pieceLeft;
   animation-delay: 4.5s;
 }
+
+.github-fork-ribbon:before { background-color: #333; }
