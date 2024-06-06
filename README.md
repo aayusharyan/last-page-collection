@@ -1,4 +1,4 @@
-![Hero Slider](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/repo_assets/slideshow.gif)
+![Hero Slider](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/og.gif)
 
 # Collection of Interesting Last Pages
 
