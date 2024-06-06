@@ -1,5 +1,7 @@
 # Homelab Website of Aayush Sinha
 
+![Hero Slider](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/repo_assets/slideshow.gif)
+
 This website is a collection of interesting 
 Public site for homelab server
 
