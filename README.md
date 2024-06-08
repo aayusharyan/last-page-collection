@@ -4,7 +4,7 @@
 
 ![Website Status](https://img.shields.io/website?url=https%3A%2F%2Flast.yush.dev&up_message=Up%20and%20Running&label=Website%20Status)
 ![Repo stars](https://img.shields.io/github/stars/aayusharyan/last-page-collection?style=flat&label=Repo%20Stars)
-![Check and Build status](https://img.shields.io/github/checks-status/aayusharyan/last-page-collection/main?logo=jenkins&labelColor=%23EFEFEFlabel=Checks%20and%20Build%20Status)
+![Check and Build status](https://img.shields.io/github/checks-status/aayusharyan/last-page-collection/main?logo=jenkins&labelColor=%23EFEFEF&label=Checks%20and%20Build%20Status)
 ![Please star this Repo](https://img.shields.io/badge/Please%20Star%20this%20repo%20%E2%AD%90%20-8A2BE2)
 
 This website is a collection of interesting public sites 404 pages. These are various 404 pages from different websites that I found interesting.
