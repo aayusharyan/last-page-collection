@@ -1,4 +1,4 @@
-![Variant 1 Screenshot](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant1/assets/og.png)
+[![Variant 1 Screenshot](https://last.yush.dev/variant1/assets/og.png)](https://last.yush.dev/variant1)
 
 # Variant 1
 
