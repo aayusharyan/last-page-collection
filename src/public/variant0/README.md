@@ -1,5 +1,11 @@
-# Variant 10
+[![Variant 0 Screenshot](https://last.yush.dev/variant0/assets/og.png)](https://last.yush.dev/variant0)
 
-![Screenshot](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant0/og.png)
+# Variant 0
 
-[Codepen](Not available)
+[Link to this variant](https://last.yush.dev/variant0)
+
+## Description
+
+## Credits
+
+[Original](https://hmpg.net/)
