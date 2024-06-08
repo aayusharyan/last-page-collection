@@ -10,7 +10,7 @@
 This website is a collection of interesting public sites 404 pages. These are various 404 pages from different websites that I found interesting.
 Live at [last.yush.dev](https://last.yush.dev)
 
-The context is changed from being a 404 Not Found page to a Last Page. The idea is to make the user feel like they are at the end of the website. The user has reached the last page of the website.
+The context is changed from being a 404 Not Found page to a Last Page. The idea is to make the user feel like they have reached the last webpage and are at the end of the internet.
 _(This is with assumption that is someone is visiting my website, they are pretty much at the end of the internet as my website is not that popular.)_
 
 There are multiple variants of the last pages. Each is a different variant in it's own directory.
