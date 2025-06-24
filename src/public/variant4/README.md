@@ -6,6 +6,8 @@
 
 ## Description
 
+A page with glitched text just saying to Refresh!
+
 ## Credits
 
 [Codepen Link](https://codepen.io/pgalor/pen/OeRWJQ)
