@@ -30,19 +30,19 @@ Please raise an issue with the following details:
 
 ## Variants
 
-| Variant | Link                                                     | Preview                                                                                                                         |
-| :-----: | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-|    0    | [last.yush.dev/variant0](https://last.yush.dev/variant0) | ![Variant 0 Preview](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant0/assets/og.png) |
-|    1    | [last.yush.dev/variant1](https://last.yush.dev/variant1) | ![Variant 1 Preview](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant1/assets/og.png) |
-|    2    | [last.yush.dev/variant2](https://last.yush.dev/variant2) | ![Variant 2 Preview](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant2/assets/og.png) |
-|    3    | [last.yush.dev/variant3](https://last.yush.dev/variant3) | ![Variant 3 Preview](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant3/assets/og.png) |
-|    4    | [last.yush.dev/variant4](https://last.yush.dev/variant4) | ![Variant 4 Preview](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant4/assets/og.png) |
-|    5    | [last.yush.dev/variant5](https://last.yush.dev/variant5) | ![Variant 5 Preview](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant5/assets/og.png) |
-|    6    | [last.yush.dev/variant6](https://last.yush.dev/variant6) | ![Variant 6 Preview](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant6/assets/og.png) |
-|    7    | [last.yush.dev/variant7](https://last.yush.dev/variant7) | ![Variant 7 Preview](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant7/assets/og.png) |
-|    8    | [last.yush.dev/variant8](https://last.yush.dev/variant8) | ![Variant 8 Preview](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant8/assets/og.png) |
-|    9    | [last.yush.dev/variant9](https://last.yush.dev/variant9) | ![Variant 9 Preview](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/src/public/variant9/assets/og.png) |
+| Variant | Link                                                     | Preview                                       |
+| :-----: | -------------------------------------------------------- | --------------------------------------------- |
+|    0    | [last.yush.dev/variant0](https://last.yush.dev/variant0) | ![Variant 0 Preview](/variant0/assets/og.png) |
+|    1    | [last.yush.dev/variant1](https://last.yush.dev/variant1) | ![Variant 1 Preview](/variant1/assets/og.png) |
+|    2    | [last.yush.dev/variant2](https://last.yush.dev/variant2) | ![Variant 2 Preview](/variant2/assets/og.png) |
+|    3    | [last.yush.dev/variant3](https://last.yush.dev/variant3) | ![Variant 3 Preview](/variant3/assets/og.png) |
+|    4    | [last.yush.dev/variant4](https://last.yush.dev/variant4) | ![Variant 4 Preview](/variant4/assets/og.png) |
+|    5    | [last.yush.dev/variant5](https://last.yush.dev/variant5) | ![Variant 5 Preview](/variant5/assets/og.png) |
+|    6    | [last.yush.dev/variant6](https://last.yush.dev/variant6) | ![Variant 6 Preview](/variant6/assets/og.png) |
+|    7    | [last.yush.dev/variant7](https://last.yush.dev/variant7) | ![Variant 7 Preview](/variant7/assets/og.png) |
+|    8    | [last.yush.dev/variant8](https://last.yush.dev/variant8) | ![Variant 8 Preview](/variant8/assets/og.png) |
+|    9    | [last.yush.dev/variant9](https://last.yush.dev/variant9) | ![Variant 9 Preview](/variant9/assets/og.png) |
 
 ## Credits
 
-All credits for each variants are given in their respective directories's README files.
+All credits for each variants are given in their respective directories' README files.
