@@ -6,6 +6,8 @@
 
 ## Description
 
+An old style TV without signals with flickering background and the text "REFRESH THE PAGE" written in the background.
+
 ## Credits
 
 [Codepen Link](https://codepen.io/ademilter/pen/Dwaoae)
