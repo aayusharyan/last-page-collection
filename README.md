@@ -1,4 +1,4 @@
-[![Hero Slider](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/og.gif)](https://last.yush.dev)
+[![Hero Slider](/.github/og.gif)](https://last.yush.dev)
 
 # Collection of Interesting Last Pages
 
@@ -17,7 +17,7 @@ There are multiple variants of the last pages. Each is a different variant in it
 
 The switching is done randomly. So, every time you visit the website, you will see a different variant.
 This logic is hosted on [Cloudflare](https://www.cloudflare.com) and the website is self-hosted on my homelab servers.
-Switching logic can be found in [src/cloudflare_worker.js](/aayusharyan/last-page-collection/blob/main/src/cloudflare_worker.js).
+Switching logic can be found in [src/cloudflare_worker.js](/src/cloudflare_worker.js).
 
 ## How to add your own Variant
 
