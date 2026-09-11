@@ -3,7 +3,7 @@
 
 FROM nginx:alpine
 
-LABEL version="1.0.0"
+LABEL version="1.1.0"
 
 COPY src/nginx.conf /etc/nginx/nginx.conf
 COPY src/public /usr/share/nginx/html
