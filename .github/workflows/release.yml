@@ -1,0 +1,178 @@
+# Manual release: bump semver from the latest git tag, push the image to GHCR
+# and Docker Hub, and open a GitHub Release. Run from Actions → Create Release.
+
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_bump:
+        description: 'Version bump type'
+        required: true
+        type: choice
+        options:
+          - minor
+          - major
+        default: minor
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      # Latest vX.Y.Z tag, or v0.0.0 if none exist. Patch always resets to 0.
+      - name: Calculate new version
+        id: version
+        run: |
+          LATEST_TAG=$(git tag -l "v*.*.*" | sort -V | tail -n 1)
+
+          if [ -z "$LATEST_TAG" ]; then
+            LATEST_TAG="v0.0.0"
+          fi
+
+          echo "Latest tag: $LATEST_TAG"
+
+          VERSION=${LATEST_TAG#v}
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
+
+          if [ "${{ github.event.inputs.version_bump }}" == "major" ]; then
+            MAJOR=$((MAJOR + 1))
+            MINOR=0
+            PATCH=0
+          else
+            MINOR=$((MINOR + 1))
+            PATCH=0
+          fi
+
+          NEW_VERSION="v${MAJOR}.${MINOR}.${PATCH}"
+          echo "New version: $NEW_VERSION"
+
+          echo "new_version=${NEW_VERSION}" >> $GITHUB_OUTPUT
+          echo "version_number=${MAJOR}.${MINOR}.${PATCH}" >> $GITHUB_OUTPUT
+          echo "major_minor=${MAJOR}.${MINOR}" >> $GITHUB_OUTPUT
+          echo "major=${MAJOR}" >> $GITHUB_OUTPUT
+
+      - name: Update version in Dockerfile
+        run: |
+          sed -i 's/LABEL version=".*"/LABEL version="${{ steps.version.outputs.version_number }}"/' docker/Dockerfile
+          echo "Updated version in Dockerfile:"
+          grep 'LABEL version=' docker/Dockerfile
+
+      - name: Commit and push version bump
+        run: |
+          git config user.name "Aayush Sinha"
+          git config user.email "hello@yush.dev"
+          git add docker/Dockerfile
+          if git diff --cached --quiet; then
+            echo "Dockerfile already at version ${{ steps.version.outputs.version_number }}, skipping commit"
+          else
+            git commit -m "chore: bump version to ${{ steps.version.outputs.version_number }}"
+            git push origin HEAD
+          fi
+
+      - name: Create and push tag
+        run: |
+          git config user.name "Aayush Sinha"
+          git config user.email "hello@yush.dev"
+          git tag -a ${{ steps.version.outputs.new_version }} -m "Release ${{ steps.version.outputs.new_version }}"
+          git push origin ${{ steps.version.outputs.new_version }}
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          PREV_TAG=$(git tag -l "v*.*.*" | sort -V | tail -n 2 | head -n 1)
+
+          if [ -z "$PREV_TAG" ] || [ "$PREV_TAG" = "${{ steps.version.outputs.new_version }}" ]; then
+            COMMITS=$(git log --pretty=format:"- %s (%h)" --no-merges)
+          else
+            COMMITS=$(git log ${PREV_TAG}..${{ steps.version.outputs.new_version }} --pretty=format:"- %s (%h)" --no-merges)
+          fi
+
+          cat > RELEASE_NOTES.md << EOF
+          ## What's Changed
+
+          ${COMMITS}
+
+          ## Docker
+
+          \`\`\`bash
+          docker compose -f docker/docker-compose.example.yaml up -d
+          \`\`\`
+
+          Or pull the image directly:
+
+          \`\`\`bash
+          docker pull ghcr.io/${{ github.repository }}:${{ steps.version.outputs.new_version }}
+          docker pull ${{ vars.DOCKERHUB_USERNAME }}/last-page-collection:${{ steps.version.outputs.new_version }}
+          \`\`\`
+
+          **Full Changelog**: https://github.com/${{ github.repository }}/compare/${PREV_TAG}...${{ steps.version.outputs.new_version }}
+          EOF
+
+          echo "Release notes generated"
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v4
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+            ${{ vars.DOCKERHUB_USERNAME }}/last-page-collection
+          tags: |
+            type=raw,value=latest
+            type=raw,value=${{ steps.version.outputs.new_version }}
+            type=raw,value=v${{ steps.version.outputs.major_minor }}
+            type=raw,value=v${{ steps.version.outputs.major }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: docker/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ steps.version.outputs.new_version }}
+          name: ${{ steps.version.outputs.new_version }}
+          body_path: RELEASE_NOTES.md
+          draft: false
+          prerelease: false
