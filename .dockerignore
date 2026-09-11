@@ -1,0 +1,8 @@
+# Keep the image small: only src/nginx.conf and src/public are copied.
+.git
+.github
+.gitignore
+README.md
+**/.DS_Store
+.dockerignore
+docker/docker-compose.yml
