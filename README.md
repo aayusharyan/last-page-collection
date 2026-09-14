@@ -4,7 +4,6 @@
 
 ![Website Status](https://img.shields.io/website?url=https%3A%2F%2Flast.yush.dev&up_message=Up%20and%20Running&label=Website%20Status)
 ![Repo stars](https://img.shields.io/github/stars/aayusharyan/last-page-collection?style=flat&label=Repo%20Stars)
-![Check and Build status](https://img.shields.io/github/checks-status/aayusharyan/last-page-collection/main?logo=jenkins&labelColor=%23EFEFEF&label=Checks%20and%20Build%20Status)
 ![Please star this Repo](https://img.shields.io/badge/Please%20Star%20this%20repo%20%E2%AD%90%20-8A2BE2)
 
 This website is a collection of interesting public sites 404 pages. These are various 404 pages from different websites that I found interesting.
@@ -16,8 +15,44 @@ _(This is with assumption that is someone is visiting my website, they are prett
 There are multiple variants of the last pages. Each is a different variant in it's own directory.
 
 The switching is done randomly. So, every time you visit the website, you will see a different variant.
-This logic is hosted on [Cloudflare](https://www.cloudflare.com) and the website is self-hosted on my homelab servers.
-Switching logic can be found in [src/cloudflare_worker.js](/src/cloudflare_worker.js).
+The site is self-hosted on my homelab as a Docker nginx container. Random routing lives in [src/nginx.conf](/src/nginx.conf): `/` is rewritten to a random `variant0`–`variant9`, while `/variantN` and its assets are served as-is.
+
+## Usage
+
+The container listens on port `80`. All examples below map it to host port `8080` — change the left side of the mapping to suit your setup.
+
+### Docker Compose
+
+Copy the example compose file and adjust ports as needed:
+
+```bash
+cp docker/docker-compose.example.yaml docker/docker-compose.yaml
+docker compose -f docker/docker-compose.yaml up -d --build
+```
+
+### Docker Run (no build required)
+
+Pull the pre-built image from the GitHub Container Registry:
+
+```bash
+docker run -d \
+  --name last-page-collection \
+  --restart unless-stopped \
+  --security-opt no-new-privileges:true \
+  -p 8080:80 \
+  ghcr.io/aayusharyan/last-page-collection:latest
+```
+
+The same image is on Docker Hub as `aayusharyan/last-page-collection:latest`.
+
+### Build it yourself
+
+```bash
+docker build -f docker/Dockerfile -t last-page-collection .
+docker run -d --name last-page-collection -p 8080:80 last-page-collection
+```
+
+Then open [http://localhost:8080](http://localhost:8080). Direct links work the same as production, for example [http://localhost:8080/variant0](http://localhost:8080/variant0).
 
 ## How to add your own Variant
 
