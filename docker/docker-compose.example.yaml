@@ -1,0 +1,15 @@
+# Example Compose file for running the nginx image locally.
+# Copy this next to your own compose stack, or run it with:
+#   docker compose -f docker/docker-compose.example.yaml up -d --build
+# Build context is the repo root so src/public and src/nginx.conf can be copied.
+
+name: last-page-collection
+
+services:
+  last-page:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:80"
+    restart: unless-stopped
