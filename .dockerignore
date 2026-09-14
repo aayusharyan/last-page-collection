@@ -5,4 +5,5 @@
 README.md
 **/.DS_Store
 .dockerignore
-docker/docker-compose.yml
+**/docker-compose*.yml
+**/docker-compose*.yaml
