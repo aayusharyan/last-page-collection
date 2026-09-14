@@ -1,1 +1,5 @@
 .DS_Store
+
+# Local copy of docker/docker-compose.example.yaml
+docker/docker-compose.yaml
+docker/docker-compose.yml
