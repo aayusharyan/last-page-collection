@@ -17,6 +17,8 @@ There are multiple variants of the last pages. Each is a different variant in it
 The switching is done randomly. So, every time you visit the website, you will see a different variant.
 The site is self-hosted on my homelab as a Docker nginx container. Random routing lives in [src/nginx.conf](/src/nginx.conf): `/` is rewritten to a random `variant0`–`variant9`, while `/variantN` and its assets are served as-is.
 
+Every response is sent with `Cache-Control: no-store` (plus CDN-specific equivalents), and `ETag`/`Last-Modified` are stripped, so neither the browser nor any CDN in front of the site can store a copy. Without this, a cached page would pin you to a single variant.
+
 ## Usage
 
 The container listens on port `80`. All examples below map it to host port `8080` — change the left side of the mapping to suit your setup.
