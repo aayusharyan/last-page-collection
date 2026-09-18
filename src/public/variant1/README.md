@@ -6,7 +6,7 @@
 
 ## Description
 
-A blank screen with the text "Error 404" displayed, along with a blking and animating cursor. There is text below prompting the user to reload the page.
+A blank screen with the text "Error 404" displayed, along with a blinking and animating cursor. There is text below prompting the user to reload the page.
 
 ## Credits
 
