@@ -6,7 +6,7 @@
 
 ## Description
 
-An old style terminal with flickering green background and command line text, more tech savy that explains the 404 error and a clickable text to take the user to homepage and text prompting the user to refresh.
+An old style terminal with flickering green background and command line text, more tech-savvy, that explains the 404 error and a clickable text to take the user to homepage and text prompting the user to refresh.
 
 ## Credits
 
