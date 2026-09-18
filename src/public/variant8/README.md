@@ -6,7 +6,7 @@
 
 ## Description
 
-A suspensing variant with moving light making visible just the text under the light revealing what's written underneath, which is a text prompting the user to refresh and a button to take to the homepage.
+A suspenseful variant with moving light making visible just the text under the light revealing what's written underneath, which is a text prompting the user to refresh and a button to take to the homepage.
 
 ## Credits
 
