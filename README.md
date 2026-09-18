@@ -1,4 +1,4 @@
-[![Hero Slider](/.github/og.gif)](https://last.yush.dev)
+[![Hero Slider](https://raw.githubusercontent.com/aayusharyan/last-page-collection/main/.github/og.gif)](https://last.yush.dev)
 
 # Collection of Interesting Last Pages
 
@@ -15,7 +15,7 @@ _(This is with assumption that is someone is visiting my website, they are prett
 There are multiple variants of the last pages. Each is a different variant in it's own directory.
 
 The switching is done randomly. So, every time you visit the website, you will see a different variant.
-The site is self-hosted on my homelab as a Docker nginx container. Random routing lives in [src/nginx.conf](/src/nginx.conf): `/` is rewritten to a random `variant0`–`variant9`, while `/variantN` and its assets are served as-is.
+The site is self-hosted on my homelab as a Docker nginx container. Random routing lives in [src/nginx.conf](https://github.com/aayusharyan/last-page-collection/blob/main/src/nginx.conf): `/` is rewritten to a random `variant0`–`variant9`, while `/variantN` and its assets are served as-is.
 
 Every response is sent with `Cache-Control: no-store` (plus CDN-specific equivalents), and `ETag`/`Last-Modified` are stripped, so neither the browser nor any CDN in front of the site can store a copy. Without this, a cached page would pin you to a single variant.
 
@@ -69,16 +69,16 @@ Please raise an issue with the following details:
 
 | Variant | Link                                                     | Preview                                                  |
 | :-----: | -------------------------------------------------------- | -------------------------------------------------------- |
-|    0    | [last.yush.dev/variant0](https://last.yush.dev/variant0) | ![Variant 0 Preview](/src/public/variant0/assets/og.png) |
-|    1    | [last.yush.dev/variant1](https://last.yush.dev/variant1) | ![Variant 1 Preview](/src/public/variant1/assets/og.png) |
-|    2    | [last.yush.dev/variant2](https://last.yush.dev/variant2) | ![Variant 2 Preview](/src/public/variant2/assets/og.png) |
-|    3    | [last.yush.dev/variant3](https://last.yush.dev/variant3) | ![Variant 3 Preview](/src/public/variant3/assets/og.png) |
-|    4    | [last.yush.dev/variant4](https://last.yush.dev/variant4) | ![Variant 4 Preview](/src/public/variant4/assets/og.png) |
-|    5    | [last.yush.dev/variant5](https://last.yush.dev/variant5) | ![Variant 5 Preview](/src/public/variant5/assets/og.png) |
-|    6    | [last.yush.dev/variant6](https://last.yush.dev/variant6) | ![Variant 6 Preview](/src/public/variant6/assets/og.png) |
-|    7    | [last.yush.dev/variant7](https://last.yush.dev/variant7) | ![Variant 7 Preview](/src/public/variant7/assets/og.png) |
-|    8    | [last.yush.dev/variant8](https://last.yush.dev/variant8) | ![Variant 8 Preview](/src/public/variant8/assets/og.png) |
-|    9    | [last.yush.dev/variant9](https://last.yush.dev/variant9) | ![Variant 9 Preview](/src/public/variant9/assets/og.png) |
+|    0    | [last.yush.dev/variant0](https://last.yush.dev/variant0) | ![Variant 0 Preview](https://last.yush.dev/variant0/assets/og.png) |
+|    1    | [last.yush.dev/variant1](https://last.yush.dev/variant1) | ![Variant 1 Preview](https://last.yush.dev/variant1/assets/og.png) |
+|    2    | [last.yush.dev/variant2](https://last.yush.dev/variant2) | ![Variant 2 Preview](https://last.yush.dev/variant2/assets/og.png) |
+|    3    | [last.yush.dev/variant3](https://last.yush.dev/variant3) | ![Variant 3 Preview](https://last.yush.dev/variant3/assets/og.png) |
+|    4    | [last.yush.dev/variant4](https://last.yush.dev/variant4) | ![Variant 4 Preview](https://last.yush.dev/variant4/assets/og.png) |
+|    5    | [last.yush.dev/variant5](https://last.yush.dev/variant5) | ![Variant 5 Preview](https://last.yush.dev/variant5/assets/og.png) |
+|    6    | [last.yush.dev/variant6](https://last.yush.dev/variant6) | ![Variant 6 Preview](https://last.yush.dev/variant6/assets/og.png) |
+|    7    | [last.yush.dev/variant7](https://last.yush.dev/variant7) | ![Variant 7 Preview](https://last.yush.dev/variant7/assets/og.png) |
+|    8    | [last.yush.dev/variant8](https://last.yush.dev/variant8) | ![Variant 8 Preview](https://last.yush.dev/variant8/assets/og.png) |
+|    9    | [last.yush.dev/variant9](https://last.yush.dev/variant9) | ![Variant 9 Preview](https://last.yush.dev/variant9/assets/og.png) |
 
 ## Credits
 
